@@ -1,0 +1,46 @@
+[project]
+name = "ai-dev-lifecycle"
+version = "0.1.0"
+description = "Enterprise-level AI development lifecycle system"
+authors = [
+    {name = "User", email = "user@example.com"}
+]
+dependencies = [
+    "langgraph",
+    "langgraph-checkpoint-postgres",
+    "langchain-anthropic",
+    "langchain-openai",
+    "langchain-google-genai",
+    "fastapi",
+    "uvicorn",
+    "redis[hiredis]",
+    "celery",
+    "sqlalchemy",
+    "alembic",
+    "psycopg2-binary",
+    "psycopg_pool",
+    "pgvector",
+    "websockets",
+    "mcp",
+    "tavily-python",
+    "python-dotenv",
+    "pydantic",
+    "pytest",
+    "httpx",
+    "python-multipart"
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "isort",
+    "mypy",
+    "pytest-cov"
+]
+
+[tool.setuptools]
+packages = ["agents", "state", "tools", "graph", "api", "memory", "db"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
